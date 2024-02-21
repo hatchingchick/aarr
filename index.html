@@ -122,6 +122,9 @@
         // ページの読み込み時にサーバーの状態を確認
         checkServerStatus();
 
+        // 1分ごとにメインウィジェットの状況を再取得
+        setInterval(checkServerStatus, 60 * 1000);
+
         // SNSアイコンをクリックしたときの挙動を設定
         document.querySelectorAll('#sns-icons a').forEach(icon => {
             icon.addEventListener('click', event => {
